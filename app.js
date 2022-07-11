@@ -85,6 +85,7 @@ const menu = [
 btnDOM = document.querySelector(".btn-container")
 menuDOM = document.querySelector(".section-center")
 
+
 //Button function for create main buttons
 const btnCreate = () => {
   let buttons = `
@@ -117,6 +118,7 @@ const foodRecipes = (item) => {
   return food;
 }
 
+
 //Function for show all foods 
 const showAllFoods = () => {
 
@@ -130,6 +132,7 @@ const showAllFoods = () => {
 // Event Listeners
 document.addEventListener("DOMContentLoaded", showAllFoods)
 
+
 //Function for show Korean foods
 const showKoreanFoods = () => {
   
@@ -142,8 +145,28 @@ const showKoreanFoods = () => {
   })
   
   menuDOM.innerHTML = koreanFoods;
+
 }
 //UI event for Koren foods
 koreaBTN = document.querySelector("#Korea")
 //Event Listeners
 koreaBTN.addEventListener("click", showKoreanFoods);
+
+//Function for show Japan foods
+const showJapanFoods = () => {
+
+  let japanFoods = "";
+
+  menu.map(item =>{
+    if(item.category === "Japan"){
+      japanFoods += foodRecipes(item)
+    }
+  })
+
+  menuDOM.innerHTML = japanFoods;
+
+}
+//UI event for Japan foods
+japanBTN = document.querySelector("#Japan")
+//Event Listeners
+japanBTN.addEventListener("click", showJapanFoods)
