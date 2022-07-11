@@ -83,6 +83,7 @@ const menu = [
 ];
 // UI selectors
 btnDOM = document.querySelector(".btn-container")
+menuDOM = document.querySelector(".section-center")
 
 //Button function for create main buttons
 const btnCreate = () => {
@@ -97,7 +98,7 @@ const btnCreate = () => {
 btnCreate();
 
 
-
+//foodRecipe function for make html object items
 const foodRecipes = (item) => {
   let food = `
     <div class="menu-items col-lg-6 col-sm-12">
@@ -115,3 +116,16 @@ const foodRecipes = (item) => {
   `
   return food;
 }
+
+//Function for show all foods 
+const showAllFoods = () => {
+
+  let allFoods ="" 
+  
+  menu.map(item => {
+    allFoods += foodRecipes(item)
+  })
+  menuDOM.innerHTML = allFoods;
+}
+// Event Listeners
+document.addEventListener("DOMContentLoaded", showAllFoods)
