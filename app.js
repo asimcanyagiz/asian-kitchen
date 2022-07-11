@@ -120,7 +120,7 @@ const foodRecipes = (item) => {
 //Function for show all foods 
 const showAllFoods = () => {
 
-  let allFoods ="" 
+  let allFoods = "" 
   
   menu.map(item => {
     allFoods += foodRecipes(item)
@@ -129,3 +129,21 @@ const showAllFoods = () => {
 }
 // Event Listeners
 document.addEventListener("DOMContentLoaded", showAllFoods)
+
+//Function for show Korean foods
+const showKoreanFoods = () => {
+  
+  let koreanFoods = ""
+
+  menu.map(item => {
+    if(item.category === "Korea"){
+      koreanFoods += foodRecipes(item)
+    }
+  })
+  
+  menuDOM.innerHTML = koreanFoods;
+}
+//UI event for Koren foods
+koreaBTN = document.querySelector("#Korea")
+//Event Listeners
+koreaBTN.addEventListener("click", showKoreanFoods);
