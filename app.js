@@ -87,11 +87,31 @@ btnDOM = document.querySelector(".btn-container")
 //Button function for create main buttons
 const btnCreate = () => {
   let buttons = `
-    <button class="btn btn-outline-dark btn-item" data-id="All">All</button>
-    <button class="btn btn-outline-dark btn-item" data-id="Korea">Korea</button>
-    <button class="btn btn-outline-dark btn-item" data-id="Japan">Japan</button>
-    <button class="btn btn-outline-dark btn-item" data-id="China">China</button>
+    <button class="btn btn-outline-dark btn-item" id="All">All</button>
+    <button class="btn btn-outline-dark btn-item" id="Korea">Korea</button>
+    <button class="btn btn-outline-dark btn-item" id="Japan">Japan</button>
+    <button class="btn btn-outline-dark btn-item" id="China">China</button>
   `
   btnDOM.innerHTML = buttons;
 }
 btnCreate();
+
+
+
+const foodRecipes = (item) => {
+  let food = `
+    <div class="menu-items col-lg-6 col-sm-12">
+      <img src="${item.img}" alt="${item.title}" class="photo">
+      <div class="menu-info">
+        <div class="menu-title">
+          <h4>${item.title}</h4>
+          <h4 class="price">${item.price}</h4>
+        </div>
+        <div class="menu-text">
+          ${item.desc}
+        </div>
+      </div>
+    </div> 
+  `
+  return food;
+}
