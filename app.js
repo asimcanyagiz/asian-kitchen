@@ -129,9 +129,11 @@ const showAllFoods = () => {
   })
   menuDOM.innerHTML = allFoods;
 }
+//UI event for All foods
+allBTN = document.querySelector("#All")
 // Event Listeners
 document.addEventListener("DOMContentLoaded", showAllFoods)
-
+allBTN.addEventListener("click", showAllFoods)
 
 //Function for show Korean foods
 const showKoreanFoods = () => {
@@ -170,3 +172,22 @@ const showJapanFoods = () => {
 japanBTN = document.querySelector("#Japan")
 //Event Listeners
 japanBTN.addEventListener("click", showJapanFoods)
+
+//Function for show China foods
+const showChinaFoods = () => {
+
+  let chinaFoods = "";
+
+  menu.map(item => {
+    if(item.category === "China"){
+      chinaFoods += foodRecipes(item)
+    }
+  })
+  
+  menuDOM.innerHTML = chinaFoods;
+
+}
+//UI event for China foods
+chinaBTN = document.querySelector("#China")
+//Event Listeners
+chinaBTN.addEventListener("click", showChinaFoods)
