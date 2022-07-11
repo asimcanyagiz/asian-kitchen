@@ -81,3 +81,17 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+// UI selectors
+btnDOM = document.querySelector(".btn-container")
+
+//Button function for create main buttons
+const btnCreate = () => {
+  let buttons = `
+    <button class="btn btn-outline-dark btn-item" data-id="All">All</button>
+    <button class="btn btn-outline-dark btn-item" data-id="Korea">Korea</button>
+    <button class="btn btn-outline-dark btn-item" data-id="Japan">Japan</button>
+    <button class="btn btn-outline-dark btn-item" data-id="China">China</button>
+  `
+  btnDOM.innerHTML = buttons;
+}
+btnCreate();
